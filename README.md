@@ -3,5 +3,5 @@ sudo apt-get install wget
 ```
 
 ```
-bash <(wget -qO- http://website.com/my-script.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/ccpu/x-ui-docker/main/install.sh)
 ```
