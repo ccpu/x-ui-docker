@@ -2,6 +2,8 @@
 
 echo "Installing Requirements"
 
+sudo apt-get install -y uidmap
+
 curl -fsSL https://get.docker.com/rootless | sh
 
 echo "export XDG_RUNTIME_DIR=/home/${USER}/.docker/run" >> ~/.bashrc
