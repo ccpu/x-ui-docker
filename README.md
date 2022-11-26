@@ -1,7 +1,3 @@
-```
-sudo apt-get install wget
-```
+# Security Updates
 
-```
-bash <(wget -qO- https://raw.githubusercontent.com/ccpu/x-ui-docker/main/install.sh)
-```
+Update/upgrade server and secure server.
