@@ -10,6 +10,7 @@ echo "export DOCKER_HOST=unix:///run/user/${UID}/docker.sock" >> ~/.bashrc
 
 systemctl --user start docker
 systemctl --user enable docker
+sudo loginctl enable-linger $(whoami)
 
 read -p "Reboot Required, Reboot machine(y/n)?" -n 1 -r
 echo    # (optional) move to a new line
