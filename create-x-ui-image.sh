@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/vaxilu/x-ui
+git clone https://github.com/ccpu/x-ui.git
 
 cd x-ui
  docker build --rm -f "Dockerfile" -t local/xui "."
