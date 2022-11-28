@@ -8,11 +8,10 @@ services:
       - no-new-privileges
     restart: unless-stopped
     read_only: true
-    user: 4001
     cap_drop:
       - ALL
     tmpfs:
-      - /home/pwuser/bin:uid
+      - /home/pwuser/bin:uid=4001
     volumes:
-      - ./db/:/etc/x-ui:uid
-      - ./cert/:/root/cert:uid
+      - ./db/:/etc/x-ui
+      - ./cert/:/root/cert
