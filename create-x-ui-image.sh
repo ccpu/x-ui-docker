@@ -2,6 +2,14 @@
 
 git clone https://github.com/ccpu/x-ui.git
 
+# https://github.com/moby/moby/issues/2259
+# Docker image with none root user cant access volumes
+# Hance giving access to user created in image using chown
+mkdir db
+mkdir cert
+chown -R 4001 /home/mo/db/
+chown -R 4001 /home/mo/cert/
+
 cd x-ui
  docker build --rm -f "Dockerfile" -t local/xui "."
 
@@ -14,7 +22,6 @@ docker run \
   -v "$PWD/cert/:/root/cert" \
   -p 54321:54321 \
   --name x-ui \
+  --security-opt no-new-privileges \
   --restart unless-stopped \
   -it local/xui:latest
-
-echo "Image Created."
