@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  xui:
+    image: local/xui:latest
+    ports:
+      - "54321:54321"
+    security_opt:
+      - no-new-privileges
+    restart: unless-stopped
+    read_only: true
+    user: 4001
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /home/pwuser/bin:uid
+    volumes:
+      - ./db/:/etc/x-ui:uid
+      - ./cert/:/root/cert:uid
