@@ -17,6 +17,10 @@ sudo apt-get update && sudo apt-get install -y git && git clone https://github.c
 
 ## TODO
 
+### Run Docker as none root user
+
+> Docker sometime throw 'unable to open database file: no such file or directory', its because the user in docker image 'pwuser' don't have a permission to read the mounted volume.
+
 ### server hardening
 
 1. Create none root user and disable root user using following functions in this [repo](https://github.com/ccpu/secure-linux):
