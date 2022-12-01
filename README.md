@@ -12,7 +12,7 @@ sudo apt-get update && sudo apt-get install -y git && git clone https://github.c
 
    > Note: You can run install-rootless-docker.sh bash script to install docker rootless, but be cautious when hardening linux with [this script](https://github.com/konstruktoid/hardening). It will cause problem such as [this issue](https://github.com/docker/docker-install/issues/324.) for rootless docker.
 
-3. Create by running `sudo bash create-x-ui-image.sh`.
+3. Create image by running `sudo bash create-x-ui-image.sh` script.
 4. Run `sudo docker compose up`
 
 ## TODO
