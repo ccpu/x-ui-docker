@@ -1,24 +1,26 @@
 # Security Updates
 
-Update/upgrade server and secure server.
+## Setup
+
+1. Run following command:
 
 ```
-sudo apt-get update && sudo apt-get install curl &&
-curl -sf -L https://raw.githubusercontent.com/ccpu/x-ui-docker/main/update-server.sh -o update-server.sh &&
-chmod +x update-server.sh && sudo ./update-server.sh && sudo rm update-server.sh
-
+sudo apt-get update && sudo apt-get install -y git && git clone https://github.com/ccpu/x-ui-docker tmp && mv tmp/* . && rm -rf tmp
 ```
 
-```
-curl -sf -L https://raw.githubusercontent.com/ccpu/x-ui-docker/main/install-rootless-docker.sh -o install-rootless-docker.sh &&
-chmod +x install-rootless-docker.sh && ./install-rootless-docker.sh && rm install-rootless-docker.sh
-```
+2. Install docker by running `sudo bash install-docker.sh` script.
 
-```
-sudo apt-get install -y uidmap && sudo apt-get install -y curl && sudo apt-get install -y git
-```
+   > Note: You can run install-rootless-docker.sh bash script to install docker rootless, but be cautious when hardening linux with [this script](https://github.com/konstruktoid/hardening). It will cause problem such as [this issue](https://github.com/docker/docker-install/issues/324.) for rootless docker.
 
-```
-curl -sf -L https://raw.githubusercontent.com/ccpu/x-ui-docker/main/create-x-ui-image.sh -o create-x-ui-image.sh &&
-chmod +x create-x-ui-image.sh && ./create-x-ui-image.sh && rm create-x-ui-image.sh
-```
+3. Create by running `sudo bash create-x-ui-image.sh`.
+4. Run `sudo docker compose up`
+
+## TODO
+
+### server hardening
+
+1. Create none root user and disable root user using following functions in this [repo](https://github.com/ccpu/secure-linux):
+   - add_user
+   - disable_passauth
+   - prompt_rootlogin
+2. Use instauration [in here](https://marketing-assets.us-east-1.linodeobjects.com/Linode_eBook_HackerSploit_DockerSecurityEssentials.pdf) to harden machine.

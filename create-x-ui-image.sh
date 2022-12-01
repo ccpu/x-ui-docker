@@ -16,18 +16,3 @@ cd x-ui
 cd ..
 
 echo "Image Created."
-
-# sudo docker run \
-#   -v "$PWD/db/:/etc/x-ui" \
-#   -v "$PWD/cert/:/root/cert" \
-#   -p 54321:54321 \
-#   --name x-ui \
-#   --security-opt no-new-privileges \
-#   --restart unless-stopped \
-#   --read-only \
-#   --tmpfs /home/pwuser/bin:uid=4001 \
-#   --cap-drop all \
-#   -it local/xui:latest
-
-# https://www.techrepublic.com/article/how-to-use-docker-bench-for-security-to-audit-your-container-deployments/
-# https://developers.hp.com/epic-stories/blog/docker-bench-security-container-hardening-and-auditing-host-security?language=pt

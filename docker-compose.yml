@@ -6,10 +6,10 @@ services:
       - "54321:54321"
     security_opt:
       - no-new-privileges
-    restart: unless-stopped
+    restart: always
     read_only: true
     cap_drop:
-      - ALL
+      - all
     tmpfs:
       - /home/pwuser/bin:uid=4001
     volumes:
